@@ -10,7 +10,7 @@ import { Sparkles, Send } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/coach")({
-  head: () => ({ meta: [{ title: "AI Coach · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "AI Coach · Stroke Care" }] }),
   component: Coach,
 });
 

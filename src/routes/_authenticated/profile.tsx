@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/profile")({
-  head: () => ({ meta: [{ title: "Profile · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "Profile · Stroke Care" }] }),
   component: ProfilePage,
 });
 

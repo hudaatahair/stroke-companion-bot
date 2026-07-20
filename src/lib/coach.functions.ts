@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 
-const SYSTEM_PROMPT = `You are StrokeCare AI, an intelligent rehabilitation assistant for stroke patients.
+const SYSTEM_PROMPT = `You are Stroke Care, an intelligent rehabilitation assistant for stroke patients.
 
 Responsibilities:
 - Encourage patients positively.

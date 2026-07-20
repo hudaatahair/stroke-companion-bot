@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/exercises/")({
-  head: () => ({ meta: [{ title: "Exercise library · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "Exercise library · Stroke Care" }] }),
   component: Library,
 });
 

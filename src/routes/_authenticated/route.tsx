@@ -40,7 +40,7 @@ function Shell() {
           <div className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
             <HeartPulse className="size-5" />
           </div>
-          <span className="text-lg font-semibold">StrokeCare AI</span>
+          <span className="text-lg font-semibold">Stroke Care</span>
         </div>
         <nav className="flex-1 space-y-1 px-3">
           {NAV.map((item) => {
@@ -69,7 +69,7 @@ function Shell() {
           <div className="grid size-8 place-items-center rounded-xl bg-primary text-primary-foreground">
             <HeartPulse className="size-4" />
           </div>
-          <span className="font-semibold">StrokeCare AI</span>
+          <span className="font-semibold">Stroke Care</span>
         </div>
         <Button variant="ghost" size="sm" onClick={signOut}><LogOut className="size-4" /></Button>
       </div>

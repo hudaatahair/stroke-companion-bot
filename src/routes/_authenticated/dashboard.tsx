@@ -11,7 +11,7 @@ import { Sparkles, Sun, Sunset, Moon, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Today · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "Today · Stroke Care" }] }),
   component: Dashboard,
 });
 

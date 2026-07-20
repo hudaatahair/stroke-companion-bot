@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
 export const Route = createFileRoute("/_authenticated/progress")({
-  head: () => ({ meta: [{ title: "Progress · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "Progress · Stroke Care" }] }),
   component: ProgressPage,
 });
 

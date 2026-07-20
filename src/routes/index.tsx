@@ -14,7 +14,7 @@ function Landing() {
           <div className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
             <HeartPulse className="size-5" />
           </div>
-          <span className="text-lg font-semibold">StrokeCare AI</span>
+          <span className="text-lg font-semibold">Stroke Care</span>
         </div>
         <Link to="/auth"><Button size="lg">Sign in</Button></Link>
       </header>
@@ -28,7 +28,7 @@ function Landing() {
             A gentle, intelligent companion for stroke recovery.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            StrokeCare AI guides survivors through daily exercises, tracks
+            Stroke Care guides survivors through daily exercises, tracks
             progress, remembers medications, and offers supportive coaching
             whenever you need it — day or night.
           </p>
@@ -58,7 +58,7 @@ function Landing() {
 
       <footer className="border-t">
         <div className="mx-auto max-w-6xl px-6 py-6 text-sm text-muted-foreground">
-          StrokeCare AI is a supportive companion and does not replace medical care.
+          Stroke Care is a supportive companion and does not replace medical care.
         </div>
       </footer>
     </div>

@@ -55,7 +55,7 @@ function AuthPage() {
           <div className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground">
             <HeartPulse className="size-5" />
           </div>
-          <span className="text-lg font-semibold">StrokeCare AI</span>
+          <span className="text-lg font-semibold">Stroke Care</span>
         </Link>
         <h1 className="text-3xl">{mode === "signin" ? "Welcome back" : "Create your account"}</h1>
         <p className="mt-1 text-muted-foreground">

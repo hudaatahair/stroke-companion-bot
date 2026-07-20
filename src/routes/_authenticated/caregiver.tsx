@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, AlertCircle, Pill } from "lucide-react";
 
 export const Route = createFileRoute("/_authenticated/caregiver")({
-  head: () => ({ meta: [{ title: "Caregiver · StrokeCare AI" }] }),
+  head: () => ({ meta: [{ title: "Caregiver · Stroke Care" }] }),
   component: Caregiver,
 });
 

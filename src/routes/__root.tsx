@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Personalized daily stroke rehabilitation with an AI coach, exercise plans, progress tracking, and medication reminders." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "StrokeCare AI — Intelligent Rehabilitation Assistant" },
+      { name: "twitter:description", content: "Personalized daily stroke rehabilitation with an AI coach, exercise plans, progress tracking, and medication reminders." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8b60ea9e-ed5d-41ca-afae-ad3498b4ffbf" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8b60ea9e-ed5d-41ca-afae-ad3498b4ffbf" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },

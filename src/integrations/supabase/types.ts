@@ -14,7 +14,190 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      exercises: {
+        Row: {
+          category: string
+          description: string
+          difficulty: string
+          duration_min: number
+          id: string
+          instructions: string
+          time_of_day: string
+          title: string
+        }
+        Insert: {
+          category: string
+          description: string
+          difficulty?: string
+          duration_min?: number
+          id?: string
+          instructions: string
+          time_of_day: string
+          title: string
+        }
+        Update: {
+          category?: string
+          description?: string
+          difficulty?: string
+          duration_min?: number
+          id?: string
+          instructions?: string
+          time_of_day?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      medication_logs: {
+        Row: {
+          date: string
+          id: string
+          medication_id: string
+          taken_at: string | null
+          user_id: string
+        }
+        Insert: {
+          date?: string
+          id?: string
+          medication_id: string
+          taken_at?: string | null
+          user_id: string
+        }
+        Update: {
+          date?: string
+          id?: string
+          medication_id?: string
+          taken_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "medication_logs_medication_id_fkey"
+            columns: ["medication_id"]
+            isOneToOne: false
+            referencedRelation: "medications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      medications: {
+        Row: {
+          created_at: string | null
+          dosage: string | null
+          id: string
+          name: string
+          reminder_time: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          dosage?: string | null
+          id?: string
+          name: string
+          reminder_time: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          dosage?: string | null
+          id?: string
+          name?: string
+          reminder_time?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          affected_side: string | null
+          age: number | null
+          created_at: string | null
+          daily_goal: number | null
+          full_name: string | null
+          id: string
+          mobility_level: string | null
+          recovery_stage: string | null
+          view_mode: string | null
+        }
+        Insert: {
+          affected_side?: string | null
+          age?: number | null
+          created_at?: string | null
+          daily_goal?: number | null
+          full_name?: string | null
+          id: string
+          mobility_level?: string | null
+          recovery_stage?: string | null
+          view_mode?: string | null
+        }
+        Update: {
+          affected_side?: string | null
+          age?: number | null
+          created_at?: string | null
+          daily_goal?: number | null
+          full_name?: string | null
+          id?: string
+          mobility_level?: string | null
+          recovery_stage?: string | null
+          view_mode?: string | null
+        }
+        Relationships: []
+      }
+      progress: {
+        Row: {
+          created_at: string | null
+          date: string
+          exercise_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          date?: string
+          exercise_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          date?: string
+          exercise_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "progress_exercise_id_fkey"
+            columns: ["exercise_id"]
+            isOneToOne: false
+            referencedRelation: "exercises"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

@@ -62,7 +62,7 @@ export const sendChatMessage = createServerFn({ method: "POST" })
     const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Lovable-API-Key": key },
-      body: JSON.stringify({ model: "google/gemini-3-flash-preview", messages }),
+      body: JSON.stringify({ model: "google/gemini-3.6-flash", messages }),
     });
 
     if (!res.ok) {
@@ -104,7 +104,7 @@ Name: ${profile?.full_name || "friend"}. Recovery stage: ${profile?.recovery_sta
         method: "POST",
         headers: { "Content-Type": "application/json", "Lovable-API-Key": key },
         body: JSON.stringify({
-          model: "google/gemini-3-flash-preview",
+          model: "google/gemini-3.6-flash",
           messages: [{ role: "system", content: SYSTEM_PROMPT }, { role: "user", content: prompt }],
         }),
       });

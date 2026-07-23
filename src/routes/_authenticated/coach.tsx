@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { friendlyError } from "@/lib/friendly-error";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getChatHistory, sendChatMessage } from "@/lib/coach.functions";
@@ -33,7 +34,7 @@ function Coach() {
   const send = useMutation({
     mutationFn: (message: string) => sendFn({ data: { message } }),
     onSuccess: () => { qc.invalidateQueries({ queryKey: ["chat"] }); setInput(""); inputRef.current?.focus(); },
-    onError: (e) => toast.error(e instanceof Error ? e.message : "Failed"),
+    onError: (e) => toast.error(friendlyError(e, "Failed")),
   });
 
   useEffect(() => { scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" }); }, [history, send.isPending]);

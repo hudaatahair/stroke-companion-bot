@@ -1,4 +1,5 @@
 import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import { friendlyError } from "@/lib/friendly-error";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getDashboard, toggleExerciseDone } from "@/lib/patient.functions";
@@ -34,7 +35,7 @@ function Dashboard() {
   const toggle = useMutation({
     mutationFn: (v: { exerciseId: string; done: boolean }) => toggleFn({ data: v }),
     onSuccess: () => router.invalidate(),
-    onError: (e) => toast.error(e instanceof Error ? e.message : "Failed"),
+    onError: (e) => toast.error(friendlyError(e, "Failed")),
   });
 
   if (isLoading || !data) return <div className="text-muted-foreground">Loading your day…</div>;

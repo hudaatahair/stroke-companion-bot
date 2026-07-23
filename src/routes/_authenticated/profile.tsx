@@ -1,4 +1,5 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { friendlyError } from "@/lib/friendly-error";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getDashboard, updateProfile } from "@/lib/patient.functions";
@@ -49,7 +50,7 @@ function ProfilePage() {
       daily_goal: Number(form.daily_goal),
     } }),
     onSuccess: () => { router.invalidate(); toast.success("Profile saved"); },
-    onError: (e) => toast.error(e instanceof Error ? e.message : "Failed"),
+    onError: (e) => toast.error(friendlyError(e, "Failed")),
   });
 
   return (

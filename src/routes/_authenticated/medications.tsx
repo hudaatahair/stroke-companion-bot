@@ -1,4 +1,5 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { friendlyError } from "@/lib/friendly-error";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getDashboard, addMedication, deleteMedication, toggleMedTaken } from "@/lib/patient.functions";
@@ -31,7 +32,7 @@ function Meds() {
   const addM = useMutation({
     mutationFn: () => addFn({ data: { name, dosage, reminder_time: time } }),
     onSuccess: () => { setName(""); setDosage(""); setTime("08:00"); router.invalidate(); toast.success("Medication added"); },
-    onError: (e) => toast.error(e instanceof Error ? e.message : "Failed"),
+    onError: (e) => toast.error(friendlyError(e, "Failed")),
   });
   const delM = useMutation({
     mutationFn: (id: string) => delFn({ data: { id } }),
